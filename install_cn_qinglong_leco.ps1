@@ -2,7 +2,7 @@ $Env:HF_HOME = "huggingface"
 $Env:PIP_DISABLE_PIP_VERSION_CHECK = 1
 $Env:PIP_NO_CACHE_DIR = 1
 function InstallFail {
-    Write-Output "°²×°Ê§°Ü¡£"
+    Write-Output "ï¿½ï¿½×°Ê§ï¿½Ü¡ï¿½"
     Read-Host | Out-Null ;
     Exit
 }
@@ -18,35 +18,35 @@ function Check {
 }
 
 if (!(Test-Path -Path "venv")) {
-    Write-Output "ÕýÔÚ´´½¨ÐéÄâ»·¾³..."
+    Write-Output "ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â»·ï¿½ï¿½..."
     python -m venv venv
-    Check "´´½¨ÐéÄâ»·¾³Ê§°Ü£¬Çë¼ì²é python ÊÇ·ñ°²×°Íê±ÏÒÔ¼° python °æ±¾ÊÇ·ñÎª64Î»°æ±¾µÄpython 3.10¡¢»òpythonµÄÄ¿Â¼ÊÇ·ñÔÚ»·¾³±äÁ¿PATHÄÚ¡£"
+    Check "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â»·ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ python ï¿½Ç·ï¿½×°ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ python ï¿½æ±¾ï¿½Ç·ï¿½Îª64Î»ï¿½æ±¾ï¿½ï¿½python 3.10ï¿½ï¿½ï¿½ï¿½pythonï¿½ï¿½Ä¿Â¼ï¿½Ç·ï¿½ï¿½Ú»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PATHï¿½Ú¡ï¿½"
 }
 
 .\venv\Scripts\activate
-Check "¼¤»îÐéÄâ»·¾³Ê§°Ü¡£"
+Check "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â»·ï¿½ï¿½Ê§ï¿½Ü¡ï¿½"
 
-Write-Output "°²×°³ÌÐòËùÐèÒÀÀµ (ÒÑ½øÐÐ¹úÄÚ¼ÓËÙ£¬ÈôÔÚ¹úÍâ»òÎÞ·¨Ê¹ÓÃ¼ÓËÙÔ´Çë»»ÓÃ install.ps1 ½Å±¾)"
-$install_torch = Read-Host "ÊÇ·ñÐèÒª°²×° Torch+xformers? ÈôÄú±¾´ÎÎªÊ×´Î°²×°ÇëÑ¡Ôñ y £¬Èô±¾´ÎÎªÉý¼¶ÒÀÀµ°²×°ÔòÑ¡Ôñ n¡£[y/n] (Ä¬ÈÏÎª y)"
+Write-Output "ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½Ñ½ï¿½ï¿½Ð¹ï¿½ï¿½Ú¼ï¿½ï¿½Ù£ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½Þ·ï¿½Ê¹ï¿½Ã¼ï¿½ï¿½ï¿½Ô´ï¿½ë»»ï¿½ï¿½ install.ps1 ï¿½Å±ï¿½)"
+$install_torch = Read-Host "ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½×° Torch+xformers? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½×´Î°ï¿½×°ï¿½ï¿½Ñ¡ï¿½ï¿½ y ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½Ñ¡ï¿½ï¿½ nï¿½ï¿½[y/n] (Ä¬ï¿½ï¿½Îª y)"
 if ($install_torch -eq "y" -or $install_torch -eq "Y" -or $install_torch -eq ""){
     pip install torch==2.0.1+cu118 torchvision==0.15.2+cu118 -f https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.html -i https://mirror.baidu.com/pypi/simple
-    Check "torch °²×°Ê§°Ü£¬ÇëÉ¾³ý venv ÎÄ¼þ¼ÐºóÖØÐÂÔËÐÐ¡£"
+    Check "torch ï¿½ï¿½×°Ê§ï¿½Ü£ï¿½ï¿½ï¿½É¾ï¿½ï¿½ venv ï¿½Ä¼ï¿½ï¿½Ðºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½"
     pip install -U -I --no-deps xformers==0.0.20 -i https://mirror.baidu.com/pypi/simple
-    Check "xformers °²×°Ê§°Ü¡£"
+    Check "xformers ï¿½ï¿½×°Ê§ï¿½Ü¡ï¿½"
 }
 
 pip install --upgrade -r requirements.txt -i https://mirror.baidu.com/pypi/simple
-Check "ÆäËûÒÀÀµ°²×°Ê§°Ü¡£"
+Check "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ê§ï¿½Ü¡ï¿½"
 
 pip install --upgrade pytorch_lightning -i https://mirror.baidu.com/pypi/simple
-Check "pytorch-lighting°²×°Ê§°Ü¡£"
+Check "pytorch-lightingï¿½ï¿½×°Ê§ï¿½Ü¡ï¿½"
 
-pip install ./bitsandbytes_windows/bitsandbytes-0.39.1-py3-none-win_amd64.whl
-Check "ÆäËûÒÀÀµ°²×°Ê§°Ü¡£"
+pip install ./bitsandbytes_windows/bitsandbytes-0.41.1-py3-none-win_amd64.whl
+Check "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°Ê§ï¿½Ü¡ï¿½"
 
-Write-Output "°²×° bitsandbytes..."
+Write-Output "ï¿½ï¿½×° bitsandbytes..."
 cp .\bitsandbytes_windows\*.dll .\venv\Lib\site-packages\bitsandbytes\
 cp .\bitsandbytes_windows\main.py .\venv\Lib\site-packages\bitsandbytes\cuda_setup\main.py
 
-Write-Output "°²×°Íê±Ï"
+Write-Output "ï¿½ï¿½×°ï¿½ï¿½ï¿½"
 Read-Host | Out-Null ;

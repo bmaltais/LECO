@@ -1,10 +1,10 @@
 # LoRA train script by @bdsqlsz
 
 #训练模式(Lora、Sdxl_lora)
-$train_mode = "lora"
+$train_mode = "Sdxl_lora"
 
 # Train data config | 设置训练配置路径
-$config_file = "./examples/config.yaml" # config path | 配置路径
+$config_file = "./examples/sdxl-config.yaml" # config path | 配置路径
 
 # ============= DO NOT MODIFY CONTENTS BELOW | 请勿修改下方内容 =====================
 # Activate python venv
@@ -20,7 +20,7 @@ if ($train_mode -ilike "sdxl*"){
 }
 
 # run train
-accelerate launch --num_cpu_threads_per_process=8 "./$laungh_script.py" `
+accelerate launch --num_cpu_threads_per_process=2 "./$laungh_script.py" `
   --config_file=$config_file
 
 Write-Output "Train finished"

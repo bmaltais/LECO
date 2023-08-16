@@ -1,0 +1,10 @@
+- target: "woman" # what word for erasing the positive concept from
+  positive: "masterpiece, best quality, ultra high res, 8k, perfect eyes, skin pores, clearly finelly detailed, analog film grain, photorealistic, bokeh" # concept to erase
+  unconditional: "worst quality, low quality, ugly, deformed, digital art, signature, watermark, bad hands" # word to take the difference from the positive concept
+  neutral: "woman" # starting point for conditioning the target
+  action: "enhance" # erase or enhance
+  guidance_scale: 7.5
+  resolution: 1024
+  dynamic_resolution: true
+  dynamic_crops: false
+  batch_size: 1
